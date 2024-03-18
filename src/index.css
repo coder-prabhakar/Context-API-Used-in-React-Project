@@ -18,3 +18,47 @@ body {
   grid-template-rows: 70px 45px calc(100vh - 245px) 100px;
   gap: 10px;
 }
+
+.Main{
+  padding: 20px;
+  background-color: #cccccc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.Main > div{
+  background-color: #9c9c9c;
+  border-radius: 20px;
+  height: 100px;
+}
+
+.Sidebar{
+  padding: 10px;
+  overflow: auto;
+  background-color: #cccccc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Sidebar > div{
+  height: 35px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(3, 187, 3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Sidebar > div > span{
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Sidebar .delete:hover{
+  color: red;
+}
