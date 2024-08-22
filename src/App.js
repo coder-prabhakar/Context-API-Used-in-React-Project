@@ -12,7 +12,9 @@ function App(){
     const [nameList,setNameList] = useState([]);
 
     function addToSidebar(name){
-        setNameList((prev)=>[...prev,name])
+        if(!nameList.includes(name)){
+            setNameList((prev)=>[...prev,name])
+        }
     }
 
     function deleteFromSidebar(index){

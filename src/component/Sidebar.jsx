@@ -13,7 +13,9 @@ function Sidebar() {
               <span
                 className='delete'
                 onClick={()=>deleteFromSidebar(index)}
-              ><FontAwesomeIcon icon={faTrash} /></span>
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
             </div>
           )
         }
