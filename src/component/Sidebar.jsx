@@ -1,27 +1,28 @@
-import { CommonContext } from './CommonContext';
+import { useContext } from 'react';
+import { CommonContext } from '../ContextAPI/ContextAPI'; 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Sidebar() {
+
+    const {nameList, deleteFromSidebar} = useContext(CommonContext);
+
     return (
       <div className='Sidebar'>
-        <CommonContext.Consumer>
         {
-          ({nameList,deleteFromSidebar})=> nameList.map((name,index)=>
-            <div>
-              <span key={index}>{name}</span>
-              <span
-                className='delete'
-                onClick={()=>deleteFromSidebar(index)}
-              >
-                <FontAwesomeIcon icon={faTrash} />
-              </span>
-            </div>
-          )
+            nameList.map((item,index)=>
+              <div key={index}>
+                <span>{item}</span>
+                <span 
+                  className='delete'
+                  onClick={()=>deleteFromSidebar(item)}
+                ><FontAwesomeIcon icon={faTrash} /></span>
+              </div>
+            )
         }
-        </CommonContext.Consumer>
       </div>
     )
-  }
+}
   
-  export default Sidebar
+  export default Sidebar;

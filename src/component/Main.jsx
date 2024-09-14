@@ -1,16 +1,16 @@
-import { CommonContext } from "./CommonContext";
 import Card from './Card'
 
 function Main() {
+
+    const nameData = ['Prabhakar','Diwakar','Suraj','Priyanshu','Kunal','Nagmani','Aditya','Wasim','Amit'];
+
     return (
       <div className="Main">
-        <CommonContext.Consumer>
-          {
-            ({addToSidebar})=>['Prabhakar','Diwakar','Suraj','Priyanshu','Kunal','Nagmani',
-              'Aditya','Wasim','Amit'].map((title,index)=>
-              <Card name={title} key={index} addToSidebar={addToSidebar}/>)
-          }
-        </CommonContext.Consumer>
+        {
+          nameData.map((title,index)=>
+            <Card name={title} key={index}/>
+          )
+        }
       </div>
     )
 }
