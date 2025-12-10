@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import { CommonContext } from '../ContextAPI/ContextAPI'; 
+import { useCommonContext } from '../ContextAPI/ContextAPI';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Sidebar() {
 
-    const {nameList, deleteFromSidebar} = useContext(CommonContext);
+    const {nameList, deleteFromSidebar} = useCommonContext();
 
     return (
       <div className='Sidebar'>

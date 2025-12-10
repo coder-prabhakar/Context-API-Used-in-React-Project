@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import {CommonContext} from '../ContextAPI/ContextAPI';
+import { useCommonContext } from "../ContextAPI/ContextAPI"; 
 
 function Card(props) {
 
-    const {addToSidebar} = useContext(CommonContext);
+    const {addToSidebar} = useCommonContext();
 
     return (
         <div>

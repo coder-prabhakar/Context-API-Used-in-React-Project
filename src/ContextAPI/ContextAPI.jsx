@@ -1,8 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 export const CommonContext = createContext();
 
-function ContextProvider({ children }){
+export default function ContextProvider({ children }){
     const [nameList,setNameList] = useState([]);
 
     function addToSidebar(name){
@@ -23,4 +23,8 @@ function ContextProvider({ children }){
     )
 }
 
-export default ContextProvider;
+// custom hooks
+export const useCommonContext = () => {
+    const context = useContext(CommonContext);
+    return context;
+}
